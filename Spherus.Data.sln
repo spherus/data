@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Spherus.Data", "Spherus.Data\Spherus.Data.xproj", "{F8484761-5231-4DDC-9051-6FF7AE0F0AF7}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Spherus.Data", "SourceCodes\Spherus.Data\Spherus.Data.xproj", "{F8484761-5231-4DDC-9051-6FF7AE0F0AF7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
