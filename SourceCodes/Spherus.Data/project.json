@@ -5,11 +5,11 @@
     ],
     "dependencies":
     {
-        "Microsoft.CSharp": "4.0.0-beta-23019",
-        "System.Collections": "4.0.10-beta-23019",
-        "System.Linq": "4.0.0-beta-23019",
-        "System.Runtime": "4.0.20-beta-23019",
-        "System.Threading": "4.0.10-beta-23019"
+        "Microsoft.CSharp": "4.0.1-beta-*",
+        "System.Collections": "4.0.10-beta-*",
+        "System.Linq": "4.0.1-beta-*",
+        "System.Runtime": "4.0.20-beta-*",
+        "System.Threading": "4.0.10-beta-*"
     },
     "description": "Spherus.Data Class Library",
     "frameworks":
