@@ -3,7 +3,7 @@
     /// <summary>
     /// Represents the base of all Databases
     /// </summary>
-    public class Database : Entity
+    public abstract class Database : DbEntity
     {
     }
 }
