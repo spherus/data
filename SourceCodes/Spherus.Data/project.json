@@ -5,9 +5,10 @@
     ],
     "dependencies":
     {
-        "Microsoft.CSharp": "4.0.1-beta-*",
+        "Microsoft.CSharp": "4.0.0-beta-*",
         "System.Collections": "4.0.10-beta-*",
-        "System.Linq": "4.0.1-beta-*",
+        "System.Data.Common": "4.0.0",
+        "System.Linq": "4.0.0-beta-*",
         "System.Runtime": "4.0.20-beta-*",
         "System.Threading": "4.0.10-beta-*"
     },

@@ -22,7 +22,8 @@
         "System.Collections": "4.0.10-beta-23019",
         "System.Linq": "4.0.0-beta-23019",
         "System.Runtime": "4.0.20-beta-23019",
-        "System.Threading": "4.0.10-beta-23019"
+        "System.Threading": "4.0.10-beta-23019",
+        "Spherus.Data": ""
     },
     "frameworks":
     {
