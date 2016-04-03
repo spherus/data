@@ -3,7 +3,7 @@ using System.Data;
 
 namespace Spherus.Data.Attributes
 {
-    public class SqlDataObject : DataObjectAttributeBase
+    public class SqlDataObject : DataObjectAttribute
     {
         public ParameterDirection ParameterDirection { get; set; }
 

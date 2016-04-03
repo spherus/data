@@ -1,16 +1,15 @@
-﻿{
+{
     "authors":
     [
         "Rostislav Rotaru"
     ],
-    "dependencies":
-    {
-        "Microsoft.CSharp": "4.0.0-beta-*",
-        "System.Collections": "4.0.10-beta-*",
-        "System.Data.Common": "4.0.0",
-        "System.Linq": "4.0.0-beta-*",
-        "System.Runtime": "4.0.20-beta-*",
-        "System.Threading": "4.0.10-beta-*"
+    "dependencies": {
+        "Microsoft.CSharp": "4.0.0",
+        "System.Collections": "4.0.10",
+        "System.Data.Common": "4.0.1-beta-23516",
+        "System.Linq": "4.0.0",
+        "System.Runtime": "4.0.20",
+        "System.Threading": "4.0.10"
     },
     "description": "Spherus.Data Class Library",
     "frameworks":

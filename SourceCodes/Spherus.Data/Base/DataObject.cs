@@ -8,7 +8,7 @@ namespace Spherus.Data.Base
         {
             string result = null;
 
-            DataObjectAttributeBase[] attributes = (DataObjectAttributeBase[])GetType().GetProperty(propertyName).GetCustomAttributes(typeof(DataObjectAttributeBase), true);
+            DataObjectAttribute[] attributes = (DataObjectAttribute[])GetType().GetProperty(propertyName).GetCustomAttributes(typeof(DataObjectAttribute), true);
             if (attributes.Length > 0)
             {
                 return attributes[0].ColumnName;

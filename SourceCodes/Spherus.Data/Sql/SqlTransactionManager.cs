@@ -1,19 +1,31 @@
-﻿using System.Data;
+﻿using Spherus.Data.Base;
+using System.Collections.Generic;
+using System.Data;
 
-namespace Spherus.Data.Base
+namespace Spherus.Data.Sql
 {
-    public class SqlTransactionManager : TransactionManagerBase
+    public class SqlTransactionManager : TransactionManager
     {
 
         #region Constructors
 
-        ///// <summary>
-        ///// Iitializes a new instance of <see cref="SqlTransactionManager"/> class
-        ///// </summary>
-        //public SqlTransactionManager()
-        //{
+        /// <summary>
+        /// Iitializes a new instance of <see cref="SqlTransactionManager"/> class
+        /// </summary>
+        public SqlTransactionManager()
+            : base()
+        {
 
-        //}
+        }
+
+        /// <summary>
+        /// Iitializes a new instance of <see cref="SqlTransactionManager"/> class
+        /// </summary>
+        public SqlTransactionManager(IEnumerable<SqlDatabase> databases)
+            : base(databases)
+        {
+
+        }
 
         /// <summary>
         /// Iitializes a new instance of <see cref="TransactionManager"/> class

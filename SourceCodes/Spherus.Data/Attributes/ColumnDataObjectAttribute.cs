@@ -8,7 +8,7 @@ namespace Spherus.Data.Attributes
     /// Attribute that serves as base for all column attributes
     /// </summary>
     [AttributeUsage(AttributeTargets.Property, Inherited = false, AllowMultiple = false)]
-    public class ColumnDataObjectAttribute : DataObjectAttributeBase
+    public class ColumnDataObjectAttribute : DataObjectAttribute
     {
 
         #region Constructor

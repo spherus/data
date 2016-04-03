@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using Spherus.Data.Base;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Spherus.Data.Base
+namespace Spherus.Data.Sql
 {
-    public abstract class SqlDataManager : DataManagerBase
+    public abstract class SqlDataManager : DataManager
     {
         #region SQL Methods
 
@@ -22,9 +23,9 @@ namespace Spherus.Data.Base
         /// Executes sql statement and returns Dynamic Data
         /// </summary>
         /// <param name="sqlStatement">sql statement</param>
-        /// <param name="parameters">Collection of <see cref="SqlParameter"/></param>
+        /// <param name="parameters">Collection of <see cref="SqlDataParameter"/></param>
         /// <returns>Dynamic Data</returns>
-        protected abstract dynamic ExecuteSQL(string sqlStatement, IEnumerable<SqlParameter> parameters);
+        protected abstract dynamic ExecuteSQL(string sqlStatement, IEnumerable<SqlDataParameter> parameters);
 
         /// <summary>
         /// Executes sql statement and returns Dynamic Data
@@ -38,10 +39,10 @@ namespace Spherus.Data.Base
         /// Executes sql statement and returns Dynamic Data
         /// </summary>
         /// <param name="sqlStatement">sql statement</param>
-        /// <param name="parameters">Collection of <see cref="SqlParameter"/></param>
+        /// <param name="parameters">Collection of <see cref="SqlDataParameter"/></param>
         /// <param name="transactionManager"><see cref="SqlTransactionManager"/> in which need to execute sql statement</param>
         /// <returns>Dynamic Data</returns>
-        protected abstract dynamic ExecuteSQL(string sqlStatement, IEnumerable<SqlParameter> parameters, SqlTransactionManager transactionManager);
+        protected abstract dynamic ExecuteSQL(string sqlStatement, IEnumerable<SqlDataParameter> parameters, SqlTransactionManager transactionManager);
 
         #endregion
 
@@ -58,9 +59,9 @@ namespace Spherus.Data.Base
         /// Executes sql statement as NonQuery with parameters
         /// </summary>
         /// <param name="sqlStatement">sql string to execute</param>
-        /// <param name="parameters">Collection of <see cref="SqlParameter"/></param>
+        /// <param name="parameters">Collection of <see cref="SqlDataParameter"/></param>
         /// <returns>Number of Affected rows</returns>
-        protected abstract int ExecuteSQLNonQuery(string sqlStatement, IEnumerable<SqlParameter> parameters);
+        protected abstract int ExecuteSQLNonQuery(string sqlStatement, IEnumerable<SqlDataParameter> parameters);
 
         /// <summary>
         /// Executes sql statement 
@@ -74,10 +75,10 @@ namespace Spherus.Data.Base
         /// Executes sql statement 
         /// </summary>
         /// <param name="sqlStatement">sql string to execute</param>
-        /// <param name="parameters">Collection of <see cref="SqlParameter"/></param>
+        /// <param name="parameters">Collection of <see cref="SqlDataParameter"/></param>
         /// <param name="transactionManager"><see cref="SqlTransactionManager"/> in which need to execute sql statement</param>
         /// <returns>Number of Affected rows</returns>
-        protected abstract int ExecuteSQLNonQuery(string sqlStatement, IEnumerable<SqlParameter> parameters, SqlTransactionManager transactionManager);
+        protected abstract int ExecuteSQLNonQuery(string sqlStatement, IEnumerable<SqlDataParameter> parameters, SqlTransactionManager transactionManager);
 
         #endregion
 
@@ -94,9 +95,9 @@ namespace Spherus.Data.Base
         /// Executes sql statement scalar and returns object
         /// </summary>
         /// <param name="sqlStatement">sql string to execute</param>
-        /// <param name="parameters">Collection of <see cref="SqlParameter"/></param>
+        /// <param name="parameters">Collection of <see cref="SqlDataParameter"/></param>
         /// <returns>Execution result object</returns>
-        protected abstract object ExecuteSQLScalar(string sqlStatement, IEnumerable<SqlParameter> parameters);
+        protected abstract object ExecuteSQLScalar(string sqlStatement, IEnumerable<SqlDataParameter> parameters);
 
         /// <summary>
         /// Executes sql statement scalar and returns object
@@ -110,10 +111,10 @@ namespace Spherus.Data.Base
         /// Executes sql statement scalar and returns object
         /// </summary>
         /// <param name="sqlStatement">sql string to execute</param>
-        /// <param name="parameters">Collection of <see cref="SqlParameter"/></param>
+        /// <param name="parameters">Collection of <see cref="SqlDataParameter"/></param>
         /// <param name="transactionManager"><see cref="SqlTransactionManager"/> in which need to execute sql statement</param>
         /// <returns>Execution result object</returns>
-        protected abstract object ExecuteSQLScalar(string sqlStatement, IEnumerable<SqlParameter> parameters, SqlTransactionManager transactionManager);
+        protected abstract object ExecuteSQLScalar(string sqlStatement, IEnumerable<SqlDataParameter> parameters, SqlTransactionManager transactionManager);
 
         #endregion
 
@@ -123,7 +124,7 @@ namespace Spherus.Data.Base
         /// Executes a sql statement and returns an object
         /// </summary>
         /// <param name="sqlStatement">The sql statement to execute</param>
-        /// <param name="parameters">Collection of <see cref="SqlParameter"/></param>
+        /// <param name="parameters">Collection of <see cref="SqlDataParameter"/></param>
         /// <returns>Instance of generic <see cref="DataObject"/></returns>
         protected abstract T ExecuteSQLObject<T>(string sqlStatement) where T : DataObject;
 
@@ -131,9 +132,9 @@ namespace Spherus.Data.Base
         /// Executes a sql statement and returns an object
         /// </summary>
         /// <param name="sqlStatement">The sql statement to execute</param>
-        /// <param name="parameters">Collection of <see cref="SqlParameter"/></param>
+        /// <param name="parameters">Collection of <see cref="SqlDataParameter"/></param>
         /// <returns>Instance of generic <see cref="DataObject"/></returns>
-        protected abstract T ExecuteSQLObject<T>(string sqlStatement, IEnumerable<SqlParameter> parameters) where T : DataObject;
+        protected abstract T ExecuteSQLObject<T>(string sqlStatement, IEnumerable<SqlDataParameter> parameters) where T : DataObject;
 
         /// <summary>
         /// Executes a sql statement and returns an object
@@ -147,10 +148,10 @@ namespace Spherus.Data.Base
         /// Executes a sql statement and returns an object
         /// </summary>
         /// <param name="sqlStatement">The sql statement to execute</param>
-        /// <param name="parameters">Collection of <see cref="SqlParameter"/></param>
+        /// <param name="parameters">Collection of <see cref="SqlDataParameter"/></param>
         /// <param name="transactionManager"><see cref="SqlTransactionManager"/> in which need to execute sql statement</param>
         /// <returns>Instance of generic <see cref="DataObject"/></returns>
-        protected abstract T ExecuteSQLObject<T>(string sqlStatement, IEnumerable<SqlParameter> parameters, SqlTransactionManager transactionManager) where T : DataObject;
+        protected abstract T ExecuteSQLObject<T>(string sqlStatement, IEnumerable<SqlDataParameter> parameters, SqlTransactionManager transactionManager) where T : DataObject;
 
         #endregion
 
@@ -167,9 +168,9 @@ namespace Spherus.Data.Base
         /// Executes a sql statement and returns an IEnumerable of DataObject
         /// </summary>
         /// <param name="sqlStatement">The sql statement to execute</param>
-        /// <param name="parameters">Collection of <see cref="SqlParameter"/></param>
+        /// <param name="parameters">Collection of <see cref="SqlDataParameter"/></param>
         /// <returns>IEnumerable of generic <see cref="DataObject"/></returns>
-        protected abstract IEnumerable<T> ExecuteSQLObjects<T>(string sqlStatement, IEnumerable<SqlParameter> parameters) where T : DataObject;
+        protected abstract IEnumerable<T> ExecuteSQLObjects<T>(string sqlStatement, IEnumerable<SqlDataParameter> parameters) where T : DataObject;
 
         /// <summary>
         /// Executes a sql statement and returns an IEnumerable of DataObject
@@ -183,10 +184,10 @@ namespace Spherus.Data.Base
         /// Executes a sql statement and returns an IEnumerable of DataObject
         /// </summary>
         /// <param name="sqlStatement">The sql statement to execute</param>
-        /// <param name="parameters">Collection of <see cref="SqlParameter"/></param>
+        /// <param name="parameters">Collection of <see cref="SqlDataParameter"/></param>
         /// <param name="transactionManager"><see cref="SqlTransactionManager"/> in which need to execute sql statement</param>
         /// <returns>IEnumerable of generic <see cref="DataObject"/></returns>
-        protected abstract IEnumerable<T> ExecuteSQLObjects<T>(string sqlStatement, IEnumerable<SqlParameter> parameters, SqlTransactionManager transactionManager) where T : DataObject;
+        protected abstract IEnumerable<T> ExecuteSQLObjects<T>(string sqlStatement, IEnumerable<SqlDataParameter> parameters, SqlTransactionManager transactionManager) where T : DataObject;
 
         #endregion
 
@@ -207,9 +208,9 @@ namespace Spherus.Data.Base
         /// Executes sql statement asynchronously and returns Dynamic Data
         /// </summary>
         /// <param name="sqlStatement">sql statement</param>
-        /// <param name="parameters">Collection of <see cref="SqlParameter"/></param>
+        /// <param name="parameters">Collection of <see cref="SqlDataParameter"/></param>
         /// <returns>Dynamic Data</returns>
-        protected abstract Task<dynamic> ExecuteSQLAsync(string sqlStatement, IEnumerable<SqlParameter> parameters);
+        protected abstract Task<dynamic> ExecuteSQLAsync(string sqlStatement, IEnumerable<SqlDataParameter> parameters);
 
         /// <summary>
         /// Executes sql statement asynchronously and returns Dynamic Data
@@ -223,10 +224,10 @@ namespace Spherus.Data.Base
         /// Executes sql statement asynchronously and returns Dynamic Data
         /// </summary>
         /// <param name="sqlStatement">sql statement</param>
-        /// <param name="parameters">Collection of <see cref="SqlParameter"/></param>
+        /// <param name="parameters">Collection of <see cref="SqlDataParameter"/></param>
         /// <param name="transactionManager"><see cref="SqlTransactionManager"/> in which need to execute sql statement</param>
         /// <returns>Dynamic Data</returns>
-        protected abstract Task<dynamic> ExecuteSQLAsync(string sqlStatement, IEnumerable<SqlParameter> parameters, SqlTransactionManager transactionManager);
+        protected abstract Task<dynamic> ExecuteSQLAsync(string sqlStatement, IEnumerable<SqlDataParameter> parameters, SqlTransactionManager transactionManager);
 
         #endregion
 
@@ -243,9 +244,9 @@ namespace Spherus.Data.Base
         /// Executes sql statement asynchronously as NonQuery
         /// </summary>
         /// <param name="sqlStatement">sql string to execute</param>
-        /// <param name="parameters">Collection of <see cref="SqlParameter"/></param>
+        /// <param name="parameters">Collection of <see cref="SqlDataParameter"/></param>
         /// <returns>Number of Affected rows</returns>
-        protected abstract Task<int> ExecuteSQLNonQueryAsync(string sqlStatement, IEnumerable<SqlParameter> parameters);
+        protected abstract Task<int> ExecuteSQLNonQueryAsync(string sqlStatement, IEnumerable<SqlDataParameter> parameters);
 
         /// <summary>
         /// Executes sql statement asynchronously as NonQuery
@@ -259,10 +260,10 @@ namespace Spherus.Data.Base
         /// Executes sql statement asynchronously as NonQuery
         /// </summary>
         /// <param name="sqlStatement">sql string to execute</param>
-        /// <param name="parameters">Collection of <see cref="SqlParameter"/></param>
+        /// <param name="parameters">Collection of <see cref="SqlDataParameter"/></param>
         /// <param name="transactionManager"><see cref="SqlTransactionManager"/> in which need to execute sql statement</param>
         /// <returns>Number of Affected rows</returns>
-        protected abstract Task<int> ExecuteSQLNonQueryAsync(string sqlStatement, IEnumerable<SqlParameter> parameters, SqlTransactionManager transactionManager);
+        protected abstract Task<int> ExecuteSQLNonQueryAsync(string sqlStatement, IEnumerable<SqlDataParameter> parameters, SqlTransactionManager transactionManager);
 
         #endregion
 
@@ -279,9 +280,9 @@ namespace Spherus.Data.Base
         /// Executes sql statement asynchronously as Scalar and returns object
         /// </summary>
         /// <param name="sqlStatement">sqlStatement to execute</param>
-        /// <param name="parameters">Collection of <see cref="SqlParameter"/></param>
+        /// <param name="parameters">Collection of <see cref="SqlDataParameter"/></param>
         /// <returns>Execution result object</returns>
-        protected abstract Task<object> ExecuteSQLScalarAsync(string sqlStatement, IEnumerable<SqlParameter> parameters);
+        protected abstract Task<object> ExecuteSQLScalarAsync(string sqlStatement, IEnumerable<SqlDataParameter> parameters);
 
         /// <summary>
         /// Executes sql statement asynchronously as Scalar and returns object
@@ -295,10 +296,10 @@ namespace Spherus.Data.Base
         /// Executes sql statement asynchronously as Scalar and returns object
         /// </summary>
         /// <param name="sqlStatement">sqlStatement to execute</param>
-        /// <param name="parameters">Collection of <see cref="SqlParameter"/></param>
+        /// <param name="parameters">Collection of <see cref="SqlDataParameter"/></param>
         /// <param name="transactionManager"><see cref="SqlTransactionManager"/> in which need to execute sql statement</param>
         /// <returns>Execution result object</returns>
-        protected abstract Task<object> ExecuteSQLScalarAsync(string sqlStatement, IEnumerable<SqlParameter> parameters, SqlTransactionManager transactionManager);
+        protected abstract Task<object> ExecuteSQLScalarAsync(string sqlStatement, IEnumerable<SqlDataParameter> parameters, SqlTransactionManager transactionManager);
 
         #endregion
 
@@ -315,9 +316,9 @@ namespace Spherus.Data.Base
         /// Executes sql statement asynchronously and returns an instance of <see cref="DataObject"/>
         /// </summary>
         /// <param name="sqlStatement">The sql statement to execute</param>
-        /// <param name="parameters">Collection of <see cref="SqlParameter"/></param>
+        /// <param name="parameters">Collection of <see cref="SqlDataParameter"/></param>
         /// <returns>Instance of generic <see cref="DataObject"/></returns>
-        protected abstract Task<T> ExecuteSQLObjectAsync<T>(string sqlStatement, IEnumerable<DataParameterBase> parameters) where T : DataObject;
+        protected abstract Task<T> ExecuteSQLObjectAsync<T>(string sqlStatement, IEnumerable<DataParameter> parameters) where T : DataObject;
 
         /// <summary>
         /// Executes sql statement asynchronously and returns an instance of <see cref="DataObject"/>
@@ -331,10 +332,10 @@ namespace Spherus.Data.Base
         /// Executes sql statement asynchronously and returns an instance of <see cref="DataObject"/>
         /// </summary>
         /// <param name="sqlStatement">The sql statement to execute</param>
-        /// <param name="parameters">Collection of <see cref="SqlParameter"/></param>
+        /// <param name="parameters">Collection of <see cref="SqlDataParameter"/></param>
         /// <param name="transactionManager"><see cref="SqlTransactionManager"/> in which need to execute sql statement</param>
         /// <returns>Instance of generic <see cref="DataObject"/></returns>
-        protected abstract Task<T> ExecuteSQLObjectAsync<T>(string sqlStatement, IEnumerable<DataParameterBase> parameters, SqlTransactionManager transactionManager) where T : DataObject;
+        protected abstract Task<T> ExecuteSQLObjectAsync<T>(string sqlStatement, IEnumerable<DataParameter> parameters, SqlTransactionManager transactionManager) where T : DataObject;
 
         #endregion
 
@@ -351,9 +352,9 @@ namespace Spherus.Data.Base
         /// Executes sql statement asynchronously and returns an <see cref="IEnumerable{T}"/> of <see cref="DataObject"/>
         /// </summary>
         /// <param name="sqlStatement">The sql statement to execute</param>
-        /// <param name="parameters">Collection of <see cref="SqlParameter"/></param>
+        /// <param name="parameters">Collection of <see cref="SqlDataParameter"/></param>
         /// <returns>IEnumerable of generic <see cref="DataObject"/></returns>
-        protected abstract Task<IEnumerable<T>> ExecuteSQLObjectsAsync<T>(string sqlStatement, IEnumerable<SqlParameter> parameters) where T : DataObject;
+        protected abstract Task<IEnumerable<T>> ExecuteSQLObjectsAsync<T>(string sqlStatement, IEnumerable<SqlDataParameter> parameters) where T : DataObject;
 
         /// <summary>
         /// Executes sql statement asynchronously and returns an <see cref="IEnumerable{T}"/> of <see cref="DataObject"/>
@@ -367,10 +368,10 @@ namespace Spherus.Data.Base
         /// Executes sql statement asynchronously and returns an <see cref="IEnumerable{T}"/> of <see cref="DataObject"/>
         /// </summary>
         /// <param name="sqlStatement">The sql statement to execute</param>
-        /// <param name="parameters">Collection of <see cref="SqlParameter"/></param>
+        /// <param name="parameters">Collection of <see cref="SqlDataParameter"/></param>
         /// <param name="transactionManager"><see cref="SqlTransactionManager"/> in which need to execute sql statement</param>
         /// <returns>IEnumerable of generic <see cref="DataObject"/></returns>
-        protected abstract Task<IEnumerable<T>> ExecuteSQLObjectsAsync<T>(string sqlStatement, IEnumerable<SqlParameter> parameters, SqlTransactionManager transactionManager) where T : DataObject;
+        protected abstract Task<IEnumerable<T>> ExecuteSQLObjectsAsync<T>(string sqlStatement, IEnumerable<SqlDataParameter> parameters, SqlTransactionManager transactionManager) where T : DataObject;
 
         #endregion
 

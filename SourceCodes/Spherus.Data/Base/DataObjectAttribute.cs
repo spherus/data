@@ -2,7 +2,7 @@
 
 namespace Spherus.Data.Base
 {
-    public class DataObjectAttributeBase: Attribute
+    public class DataObjectAttribute: Attribute
     {
         /// <summary>
         /// ColumnName property

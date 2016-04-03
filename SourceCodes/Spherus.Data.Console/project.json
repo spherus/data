@@ -1,4 +1,4 @@
-﻿{
+{
     "version": "1.0.0-*",
     "description": "Spherus.Data.Console Console Application",
     "authors":
@@ -16,14 +16,13 @@
         "Spherus.Data.Console": "Spherus.Data.Console"
     },
 
-    "dependencies":
-    {
-        "Microsoft.CSharp": "4.0.0-beta-23019",
-        "System.Collections": "4.0.10-beta-23019",
-        "System.Linq": "4.0.0-beta-23019",
-        "System.Runtime": "4.0.20-beta-23019",
-        "System.Threading": "4.0.10-beta-23019",
-        "Spherus.Data": ""
+    "dependencies": {
+        "Microsoft.CSharp": "4.0.0",
+        "Spherus.Data": "",
+        "System.Collections": "4.0.10",
+        "System.Linq": "4.0.0",
+        "System.Runtime": "4.0.20",
+        "System.Threading": "4.0.10"
     },
     "frameworks":
     {
